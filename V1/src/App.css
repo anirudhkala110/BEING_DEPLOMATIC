@@ -1,0 +1,135 @@
+button:focus {
+    outline: none !important;
+    border: 0px solid transparent !important;
+}
+.privacyPolicyBg{
+    /* background-image: url(./Assets/Logos/banner.jpg); */
+    background: linear-gradient(to right, black, black,red);   
+}
+.hoverCards {
+    transition: .2s ease-in-out;
+    min-height: 270px;
+    border: 0px;
+    /* filter: drop-shadow(0px 10px 5px rgba(90, 82, 82, 0.418)); */
+}
+.hoverCards p{
+line-height: 3;
+}
+.hoverCards li {
+    transition: .2s ease-in-out;
+    filter: blur(0px);
+    line-height: 2;
+    list-style-type: disc;
+    margin: 15px;
+}
+
+.hoverCards:hover {
+    cursor: pointer;
+}
+
+.hoverCards:hover li {
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+.hoverCards:hover h3 {
+    transition: .2s ease-in-out;
+    cursor: pointer;
+    font-weight: 900;
+}
+.hoverCards h3 {
+    transition: .2s ease-in-out;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 1.5em;
+}
+.unorderedList li{
+    list-style-type: disc;
+    line-height: 2;
+}
+.unorderedList p{
+    list-style-type: disc;
+    line-height: 2;
+}
+/* General Styles for Navbar */
+.nav-link {
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+    font-size: 14px;
+    width: fit-content;
+}
+
+.nav-link:hover {
+    border-bottom: 2px solid #007BB6;
+    color: #007BB6;
+}
+
+.nav-link:active,
+.nav-link-active {
+    border-bottom: 2px solid black;
+    background-color: #007BB6;
+    color: white;
+}
+
+/* Hover Effect for Active Links */
+.nav-link-active {
+    border-bottom: 2px solid #007BB6;
+}
+
+/* Utility Class for Flex Alignment */
+.setWidth1000px {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1000px) {
+    .setWidth1000px {
+        display: block;
+    }
+}
+
+/* Form Button Styles */
+.formButton {
+    color: #B3E6FF;
+    border: 2px solid;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.formButton:hover {
+    background-color: #0B7CAC;
+    color: #B3E6FF;
+}
+
+/* Side Fixed Button */
+/* .sideFixed {
+    transform: rotate(90deg);
+    color: white;
+    position: fixed;
+    top: 40%;
+    background-color: #ff5e0049;
+    padding: 10px;
+    width: 350px;
+    border-radius: 10px;
+    left: -155px;
+    border: 2px solid rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+} */
+
+/* .sideFixed:hover {
+    background-color: #000000;
+    color: white;
+} */
+
+/* Responsive for Smaller Devices */
+/* @media only screen and (max-width: 400px) {
+    .sideFixed {
+        left: 90%;
+    }
+} */
