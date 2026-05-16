@@ -13,16 +13,16 @@ const AfterLogin = () => {
   }
 
   return (
-    <div className='px-0 pt-5' style={{ zIndex: 999 }}>
+    <div className='px-0' style={{ zIndex: 999 }}>
       
-      <div className='mt-3 pt-2 bg-black text-white'>
+      <div className='pt-2 bg-dark text-white'>
 
         <marquee
-  behavior="alternate"
-  direction="right"
-  ref={marqueeRef}
-  onMouseEnter={handleMouseEnter}
-  onMouseLeave={handleMouseLeave}
+        behavior="alternate"
+        direction="right"
+        ref={marqueeRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
 >
   Official Website :
   

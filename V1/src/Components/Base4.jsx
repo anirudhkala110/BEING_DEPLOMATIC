@@ -19,8 +19,8 @@ const keyPartners = [
 ]
 const Base4 = () => {
     return (
-        <div className='py-5' id='ourClients'>
-            <div className='container py-5'>
+        <div className='' id='ourClients'>
+            <div className='container'>
                 <button className='btn fs-1' style={{ fontSize: '700' }}>Our clients</button>
                 <div className='mt-2'>
                     <div className='row'>

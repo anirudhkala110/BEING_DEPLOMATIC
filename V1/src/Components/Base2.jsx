@@ -6,7 +6,7 @@ import gta from '../Assets/Logos/gta.png'
 
 const Base2 = () => {
     return (
-        <div className='container py-4 px-0'>
+        <div className='container px-0'>
             <div>
                 <div className='row py-4 px-0'>
                     <div className='col-sm-12 mb-3 col-md-12 py-4'>

@@ -22,7 +22,7 @@ const Base5 = () => {
     }
     return (
         <div>
-            <div className='container py-5'>
+            <div className='container py-1'>
                 <div className='d-flex align-items-center justify-content-between'>
                     <button className='btn fs-1'>Being Diplomatic Insights</button>
                     <button className='btn btn-outline-dark fs-5 rounded-0'>Explore More Insights&nbsp;&nbsp; <i className='bi bi-arrow-right'></i></button>

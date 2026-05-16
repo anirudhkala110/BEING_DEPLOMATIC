@@ -44,7 +44,7 @@ const Base6 = () => {
 
     return (
         <div>
-            <div className="container py-3">
+            <div className="container">
                 <div className='d-flex align-items-center justify-content-between'>
                     <button className='btn rounded-0 fs-3' style={{ fontWeight: '700' }}>Being Diplomatic in the NEWS</button>
                     <button className='btn rounded-0 btn-outline-dark'>VIEW ALL NEWS <i className='bi bi-arrow-right'></i></button>

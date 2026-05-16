@@ -10,7 +10,7 @@ import './Base.css'
 
 const Base3 = () => {
     return (
-        <div className=' py-5 mb-2 px-0'>
+        <div className=' mb-2 px-0'>
             <div className='container py-5'>
                 <div className='d-flex justify-between'>
                     <button className='btn fs-1 fw-bold'>Our Work</button>
