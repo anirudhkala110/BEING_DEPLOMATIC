@@ -39,8 +39,11 @@ const Awards = () => {
         if (currentIndex < array.length - 1) {  // 3 items per view
             setCurrentIndex(currentIndex + 1);
         }
-        if (discIndex < array.length - 1) {
+        if (discIndex < array.length - 2) {
             setDescIndex(discIndex + 1)
+        }
+        if (currentIndex > array.length - 4) {  // 3 items per view
+            setCurrentIndex(0);
         }
     };
     const hanldeIndexs=(idx)=>{
@@ -96,7 +99,7 @@ const Awards = () => {
                             ))}
                         </div>
                     </div>
-                    <button className='next' onClick={handleNext} disabled={currentIndex === array.length + 1}>
+                    <button className='next' onClick={handleNext} disabled={currentIndex === array.length - 2}>
                         <i className='bi bi-chevron-right' style={{}}></i>
                     </button>
                     <div className='text-white d-flex justify-content-around' style={{ position: 'absolute', marginTop: '560px', zIndex: '1000', minWidth: '350px' }}>
