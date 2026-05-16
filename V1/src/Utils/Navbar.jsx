@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
 import logo from '../LandingPage.webp'
+import AuthPage from '../Auth/AuthPage'
+import { isLoggedIn, logout } from '../auth';
 const Navbar = () => {
     const getFullPath = () => window.location.pathname + window.location.hash;
 
     const [activeLink, setActiveLink] = useState(getFullPath());
-
+    const [handleClick, setHandleClick] = useState();
+    const [showModal, setShowModal] = useState(false);
     useEffect(() => {
         const handleLocationChange = () => {
             setActiveLink(getFullPath());
@@ -21,17 +24,69 @@ const Navbar = () => {
         };
     }, []);
 
-    console.log(activeLink);  // Debugging to check what the active link is
+    // console.log(activeLink);  // Debugging to check what the active link is
+
+    const handleLogout = () => {
+
+        // const confirmLogout = window.confirm("Do you want to logout now?");
+
+        // if (!confirmLogout) return;
+        logout();
+        setShowModal(false);
+        window.location.href = '/';
+
+    };
 
     return (
-        <nav className="container-fluid shadow-md navbar navbar-expand-lg navbar-primary fixed-top" style={{borderBottom:"1px white",background:"#000000"}}>
-            <div className="container d-flex align-items-center justify-between">
+        // fixed-top class can be used to fixing the navbar at the top
+        <nav className="container-fluid shadow-lg navbar navbar-expand-lg navbar-primary " style={{ borderBottom: "1px white", background: "#000000" }}>
+           {showModal && (
+                <div className="modal d-block" tabIndex="1" role="dialog">
+                    {/* backdrop */}
+                    <div className="modal-backdrop show" style={{zIndex:'-1'}}></div>
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+
+                            <div className="modal-header">
+                                <h5 className="modal-title">Confirm Logout</h5>
+                                <button
+                                    type="button"
+                                    className="btn-close"
+                                    onClick={() => setShowModal(false)}
+                                ></button>
+                            </div>
+
+                            <div className="modal-body">
+                                <p>Do you want to logout now?</p>
+                            </div>
+
+                            <div className="modal-footer">
+                                <button
+                                    className="btn btn-secondary"
+                                    onClick={() => setShowModal(false)}
+                                >
+                                    No
+                                </button>
+
+                                <button
+                                    className="btn btn-danger"
+                                    onClick={handleLogout}
+                                >
+                                    Yes, Logout
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            )}
+           <div className="container d-flex align-items-center justify-between">
                 <a className="navbar-brand" style={{ fontWeight: '700', fontSize: '' }} href="/">
                     <img src={logo} style={{ maxWidth: '70px', filter: 'drop-shadow(0px 0px 1px)' }} />
                 </a>
 
                 <button className="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon" 
+                    <span className="navbar-toggler-icon" style={{filter:'invert(1)'}}
                     // style={{filter:"invert(10)"}}
                     ></span>
                 </button>
@@ -83,10 +138,22 @@ const Navbar = () => {
                         </ul>
 
                         <ul className="navbar-nav">
-                            <li>
+                            {/* <li>
                                 <a className='fs-5'>
                                     <button className="btn text-white" style={{ fontWeight: '300' }}><i className="bi bi-globe2"></i> GLOBAL (English)</button>
                                 </a>
+                            </li> */}
+                            <li>
+                                {isLoggedIn() ? 
+                                    <a href='/dashboard'><b className={`nav_tab_hover nav-link mx-2 p-1 text-uppercase ${(activeLink === '/dashboard' || activeLink === '/dashboard*') ? 'nav-link-active text-white' : 'text-white'}`} >Dashboard</b></a>: <a href='/authPage' className={`nav_tab_hover rounded-lg nav-link p-1 text-uppercase ${(activeLink === '/dashboard' || activeLink === '/dashboard*') ? 'nav-link-active text-white' : 'text-white'}`}>
+                                    <></>
+                                </a>}
+                            </li>
+                            <li>
+                                {isLoggedIn() ? 
+                                    <a className='nav_tab_hover rounded-lg nav-link p-1 text-uppercase text-white rounded-0 p-1' onClick={() => setShowModal(true)}>Logout</a>: <a href='/authPage' className={`nav_tab_hover rounded-lg nav-link p-1 text-uppercase ${(activeLink === '/authPage' || activeLink === '/login' || activeLink === '/register') ? 'nav-link-active text-white' : 'text-white'}`}>
+                                    <i class="bi bi-person-circle"></i>
+                                </a>}
                             </li>
                         </ul>
                     </div>

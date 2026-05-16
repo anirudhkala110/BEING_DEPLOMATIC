@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer4 = () => {
     return (
-        <div className='container'>
+        <div className='' style={{maxHeight:'150px',marginTop:''}}>
             <div className='row'>
                 <div className='col-6'>
                     <p className='fs-5 fw-semibold' style={{ color: '#B3E6FF' }}>Follow us on</p>
@@ -25,10 +25,10 @@ const Footer4 = () => {
                     </span>
                 </div>
                 <div className='col-6 text-end'>
-                    <p className='fw-semibold mb-3' style={{ color: '#B3E6FF' }}>Job Enquiry:</p>
-                    <p className='fw-semibold mb-3' style={{ color: '#B3E6FF' }}>We are hiring! Apply Now</p>
+                    <p className='fw-semibold mb-1' style={{ color: '#B3E6FF' }}>Job Enquiry:</p>
+                    <p className='fw-semibold mb-1' style={{ color: '#B3E6FF' }}>We are hiring! Apply Now</p>
                     {/* <p className='fw-semibold mb-3 text-decoration-underline' style={{ color: '#B3E6FF' }}><a href='#'>careers@lunarlogic.com</a></p> */}
-                    <p className='fw-semibold mb-3' style={{ color: '#B3E6FF' }}><a href='#'>Being Diplomatic <sup><i className='bi bi-c-circle'></i></sup> 2024 Copyright LL</a></p>
+                    <p className='fw-semibold mb-1' style={{ color: '#B3E6FF' }}><a href='#'>Being Diplomatic <sup><i className='bi bi-c-circle'></i></sup> 2024 Copyright LL</a></p>
                     <a href='/privacy_and_policy' className='text-info'>Privacy & Policy</a>
                     <input type='hidden' value='Created By #anirudhkala110@gmail.com' />
                 </div>
