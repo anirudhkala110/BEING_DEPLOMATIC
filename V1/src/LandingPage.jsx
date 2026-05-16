@@ -17,6 +17,9 @@ import Services from './Pages/OurServices/Services'
 import Privacy_and_Policy from './Utils/Privacy_and_Policy'
 import { useState } from 'react'
 import img from './Assets/Images/LandingPage.webp'
+import AuthPage from './Auth/AuthPage'
+import Dashboard from './Pages/Dashboard_Profile/Dashboard'
+import { isLoggedIn, logout } from './auth';
 
 const LandingPage = () => {
     const handleSidebarLocation = () => {
@@ -43,6 +46,8 @@ const LandingPage = () => {
                         <Route path='/about_us' element={<AboutUs />} />
                         <Route path='/services' element={<Services />} />
                         <Route path='/privacy_and_policy' element={<Privacy_and_Policy />} />
+                        <Route path='/authPage' element ={<AuthPage/>} />
+                        {isLoggedIn() ?<Route path='/dashboard' element ={<Dashboard/>} />:<></>}
                     </Routes>
                     <Footer />
                 </Router>
